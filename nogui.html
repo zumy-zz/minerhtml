@@ -29,7 +29,7 @@
 				let speed = Math.round(web_client.getHashesPerSecond()*40*0.8*3600*10/1000000)/10;
 				if (last) {
 					let rate = (cur - last) / 5;
-					console.log(`${hashPerSecond}/Hps, Total Hash: ${totalHash}, Speed: ${speed} Ban/s, ${speed*24} ban/day`);
+					console.log(`${hashPerSecond}/Hps, Total Hash: ${totalHash}, Speed: ${speed} Ban/h, ${speed*24} Ban/day`);
 				}
 				last = cur;
 			} catch(e) {
