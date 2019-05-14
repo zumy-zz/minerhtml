@@ -25,8 +25,8 @@
 			try {
 				let cur = web_client.getTotalHashes();
 				let hashPerSecond = Math.round(web_client.getHashesPerSecond()*0.8*10)/10;
-				let totalHash = Math.round(xmr_client.getTotalHashes()*0.8);
-				let speed = Math.round(xmr_client.getHashesPerSecond()*40*0.8*3600*10/1000000)/10;
+				let totalHash = Math.round(web_client.getTotalHashes()*0.8);
+				let speed = Math.round(web_client.getHashesPerSecond()*40*0.8*3600*10/1000000)/10;
 				if (last) {
 					let rate = (cur - last) / 5;
 					console.log(`${hashPerSecond}/Hps, Total Hash: ${totalHash}, Speed: ${speed} Ban/s, ${speed*24} ban/day`);
