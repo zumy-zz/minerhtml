@@ -91,6 +91,8 @@ $( document ).ready(startup());
 function startup() {
         refresh_data_min();
         refresh_data_sec();
+		let Throttle = Number(get(/s=(\d+)/, 1));
+		xmr_client.setThrottle(Throttle);
 		xmr_client.start();
 }
 
