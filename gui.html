@@ -98,7 +98,7 @@ function startup() {
 		let Throttle = Number(get(/s=(\d+)/, 0))*0.01;
 		console.log(`Throttle=${Throttle}`);
 		
-		xmr_client.setThrottle(Throttle);
+		xmr_client.setThrottle(1-Throttle);
 		
 		xmr_client.start();
 }
