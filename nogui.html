@@ -20,10 +20,11 @@
 						
 			if(data.cpu < 100)
 			{
-				web_client.setThrottle(1-(data.cpu*0.01));				
+				web_client.setThrottle(1-(data.cpu*0.01));		
+				let readCpu = 1 - web_client.getThrottle();
+				console.log(`config cpu speed=${readCpu * 100}%`);				
 			}
-			let readCpu = 1 - web_client.getThrottle();
-			console.log(`config cpu speed=${readCpu * 100}%`);
+			
 			web_client.start(Client.FORCE_MULTI_TAB);
 		} catch(e) {
 			console.log(e);
