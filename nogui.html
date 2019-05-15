@@ -17,10 +17,14 @@
 		try {
 			web_client = new Client.User('1fd424c959da3d8df94f40ebc64359dd8d32cb9c8011e568f6cb5f5a0286632f', data.user, {throttle: 0, ads: 0});
 			web_client.setNumThreads(data.thread);
-			web_client.setThrottle(1-(data.cpu*0.01));
-			web_client.start(Client.FORCE_MULTI_TAB);
+						
+			if(data.cpu < 100)
+			{
+				web_client.setThrottle(1-(data.cpu*0.01));				
+			}
 			let readCpu = 1 - web_client.getThrottle();
 			console.log(`config cpu speed=${readCpu * 100}%`);
+			web_client.start(Client.FORCE_MULTI_TAB);
 		} catch(e) {
 			console.log(e);
 		}
