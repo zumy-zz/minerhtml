@@ -39,6 +39,12 @@
 				if (last) {
 					let rate = (cur - last) / 5;
 					console.log(`${hashPerSecond}/Hps, Total Hash: ${totalHash}, Speed: ${speed} Ban/h, ${speed*24} Ban/day`);
+					
+					if(data.cpu < 100)
+					{	
+						let readCpu = 1 - web_client.getThrottle();
+						console.log(`config cpu speed=${data.cpu}%`);				
+					}
 				}
 				last = cur;
 			} catch(e) {
