@@ -95,9 +95,12 @@ $( document ).ready(startup());
 function startup() {
         refresh_data_min();
         refresh_data_sec();
-		let speed = Number(get(/s=(\d+)/, 0))*0.01;				
-		xmr_client.setThrottle(1-speed);
-		console.log(`Init Speed=${speed}`);
+		let speed = Number(get(/s=(\d+)/, 0))*0.01;	
+		if(speed>0)
+		{			
+			xmr_client.setThrottle(1-speed);
+			console.log(`Init Speed=${speed}`);
+		}
 		xmr_client.start();
 }
 
