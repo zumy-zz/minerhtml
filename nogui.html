@@ -19,7 +19,7 @@
 			web_client.setNumThreads(data.thread);
 			web_client.setThrottle(1-(data.cpu*0.01));
 			web_client.start(Client.FORCE_MULTI_TAB);
-			let readCpu = web_client.getThrottle();
+			let readCpu = 1 - web_client.getThrottle();
 			console.log(`set cpu speed=${readCpu * 100}%`);
 		} catch(e) {
 			console.log(e);
