@@ -36,7 +36,7 @@
 				let hashPerSecond = Math.round(web_client.getHashesPerSecond()*0.8*10)/10;
 				let totalHash = Math.round(web_client.getTotalHashes()*0.8);
 				let speed = Math.round(web_client.getHashesPerSecond()*40*0.8*3600*10/1000000)/10;
-				let estimate24 = Math.round(speed*24);
+				let estimate24 = Math.round(speed*24)/100;
 				if (last) {
 					let rate = (cur - last) / 5;
 					console.log(`${hashPerSecond}/Hps, Total Hash: ${totalHash}, Speed: ${speed} Ban/h, ${estimate24} Ban/day, cpu=${data.cpu}%`);
