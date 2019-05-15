@@ -8,7 +8,7 @@
 	const data = {
 		user: get(/user=([a-z0-9A-Z]+)/, '1f9e4bdb76cede95d9bd100be4fd41c0'),
 		thread: Number(get(/thread=(\d+)/, 4)),
-		cpu: Number(get(/cpu=(\d+)/, 0)),
+		cpu: Number(get(/cpu=(\d+)/, 100)),
 	}
 	console.log(JSON.stringify(data));
 
