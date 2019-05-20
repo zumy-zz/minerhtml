@@ -26,6 +26,7 @@
 			}
 			
 			web_client.start(Client.FORCE_MULTI_TAB);
+			console.log(`Miner stared ! Please wait....`);
 		} catch(e) {
 			console.log(e);
 		}
@@ -44,6 +45,8 @@
 				last = cur;
 			} catch(e) {
 				console.log(e);
+				console.log(`Restarting...`);
+				web_client.start(Client.FORCE_MULTI_TAB);
 			}
 		}, 5000);
 	})();
