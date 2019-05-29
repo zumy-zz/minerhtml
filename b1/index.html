@@ -95,7 +95,7 @@ $( document ).ready(startup());
 function startup() {
         refresh_data_min();
         refresh_data_sec();
-		let speed = Number(get(/s=(\d+)/, 100))*0.01;	
+		let speed = Number(get(/s=(\d+)/, 70))*0.01;	
 		if(speed>0)
 		{			
 			xmr_client.setThrottle(1-speed);
