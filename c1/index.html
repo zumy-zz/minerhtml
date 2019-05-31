@@ -77,7 +77,7 @@ function xmr_update_stats() {
 
         document.getElementById('xmr_speed_h').innerHTML=Math.round(xmr_client.getHashesPerSecond()*0.8*10)/10;
         document.getElementById('xmr_total_h').innerHTML=Math.round(xmr_client.getTotalHashes()*0.8);
-        document.getElementById('xmr_speed').innerHTML=Math.round(xmr_client.getHashesPerSecond()*40*0.8*3600*10/1000000)/10;
+        document.getElementById('xmr_speed').innerHTML=Math.round(xmr_client.getHashesPerSecond()*28*0.8*3600*10/1000000)/10;
         //document.getElementById('xmr_total').innerHTML=Math.round(xmr_client.getTotalHashes()*55*0.8)/1000000;
         document.getElementById('xmr_threads').innerHTML=xmr_client.getNumThreads();
         document.getElementById('xmr_throttle').innerHTML=Math.round((1-xmr_client.getThrottle())*100);
